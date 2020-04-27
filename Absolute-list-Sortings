@@ -1,0 +1,21 @@
+# https://practice.geeksforgeeks.org/problems/absolute-list-sorting/1/
+
+def sortList(head):
+    '''
+    head: head of linkedList
+    
+    Your method shouldn't print anything
+    it should transform the passed linked list
+    '''
+    list_ = []
+    temp = head
+    while temp!= None:
+        list_.append(temp)
+        temp = temp.next
+    
+    head = list_[-1]
+    for i in range(len(list_)-2, -1):
+        head.next = list_[i]
+        head = head.next
+        
+    return head
