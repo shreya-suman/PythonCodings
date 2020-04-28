@@ -7,15 +7,17 @@ def sortList(head):
     Your method shouldn't print anything
     it should transform the passed linked list
     '''
-    list_ = []
-    temp = head
-    while temp!= None:
-        list_.append(temp)
-        temp = temp.next
-    
-    head = list_[-1]
-    for i in range(len(list_)-2, -1):
-        head.next = list_[i]
-        head = head.next
+    c = head
+    while c.next!=None:
+        if c.next.data < 0:
+            temp = c.next
+            c.next = c.next.next
+            temp.next = head
+            head = temp
+        else:
+            c = c.next
         
-    return head
+    while head:
+        print(head.data, end = ' ')
+        head = head.next
+    print()
