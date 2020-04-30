@@ -1,0 +1,17 @@
+#https://practice.geeksforgeeks.org/problems/find-the-sum-of-last-n-nodes-of-the-linked-list/1
+def sumOfLastN_Nodes(head,n):
+    #function should return sum of last n nodes
+    pointer = None
+    while head.next is not None: 
+        temp = head.next
+        head.next = pointer 
+        pointer = head 
+        head = temp
+    
+    sum_,c = 0,0
+    while c<=n:
+        print(n, head.data)
+        sum_ += head.data
+        head = head.next
+        c+=1
+    return sum_
