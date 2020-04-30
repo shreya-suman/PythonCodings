@@ -7,6 +7,7 @@ def sumOfLastN_Nodes(head,n):
         head.next = pointer 
         pointer = head 
         head = temp
+    head = pointer
     
     sum_,c = 0,0
     while c<=n:
