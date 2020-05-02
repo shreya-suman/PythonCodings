@@ -1,0 +1,14 @@
+#link : https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1
+def reverseList(self):
+    # Code here
+    if self.head is None:
+        return None
+
+    pointer = None
+    root = self.head 
+    while root is not None: 
+        temp = root.next
+        root.next = pointer 
+        pointer = root 
+        root = temp
+    self.head = pointer
