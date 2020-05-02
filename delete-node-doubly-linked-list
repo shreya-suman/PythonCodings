@@ -1,0 +1,20 @@
+#link : https://practice.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1
+prev, curr = None, head
+    i = 0
+    while i< x:
+        i +=1
+        if prev == None and i == x:
+            curr.next.prev = prev
+            head = curr.next
+            break
+        elif curr.next == None and i == x:
+            prev.next = curr.next
+            break
+        elif i == x:
+            curr.next.prev = prev
+            prev.next = curr.next
+            break
+            
+        prev = curr
+        curr = curr.next
+    return head
