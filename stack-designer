@@ -1,0 +1,17 @@
+Link : https://practice.geeksforgeeks.org/problems/stack-designer/1
+def list_as_stack(num_of_element, stack_):
+	new_list = []
+	for i in range(num_of_element, -1, -1):
+			new_list.append(stack_[i])
+
+	return new_list
+
+if __name__ == '__main__':
+	test_case = int(input())
+	while test_case:
+		test_case -= 1
+		num_of_element = int(input())
+		stack_ = list(map(int, input().split()))
+		
+		print(list_as_stack(num_of_element, stack_))
+
