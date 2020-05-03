@@ -1,0 +1,8 @@
+Link : https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/bag-of-numbers/description/
+
+n=input().split()
+if (len(n)<4):
+    n[0]="output"
+else:
+    n[0]="output:"
+print(*n)
