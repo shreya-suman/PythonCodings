@@ -1,0 +1,13 @@
+#Link : https://practice.geeksforgeeks.org/problems/queue-reversal/1
+
+def reverseQueue(q):
+    #add code here
+    stack = []
+    while q:
+        stack.append(q[0])
+        del q[0]
+    q = []
+    while stack:
+        q.append(stack[-1])
+        stack.pop()
+    return q
