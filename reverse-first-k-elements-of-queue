@@ -1,0 +1,25 @@
+def dequeue(q):
+    # Remove an item from front of queue
+    del q[0]
+    return q
+    
+def enqueue(x, q):
+    # Add an item x to rear of queue
+    q.append(x)
+    return q
+    
+def size(q):
+    # Returns number of elements in queue.
+    return len(q)
+    
+def front(q):
+    # Finds front item
+    return q[0]
+    
+def reverseK(queue,k,n):
+    # code here
+    lis=reversed(queue[0:k])
+    lis2=queue[k:n]
+    
+    joinedList = [*lis, *lis2]
+    return joinedList
