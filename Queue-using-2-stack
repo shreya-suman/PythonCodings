@@ -1,0 +1,27 @@
+#Link : https://practice.geeksforgeeks.org/problems/queue-using-two-stacks/1/
+
+def qPush(x,stack1,stack2):
+    '''
+    x: value to push
+    stack1: list
+    stack2: list
+    '''
+    #code here
+    stack1.append(x)
+    
+
+def qPop(stack1,stack2):
+    
+    '''
+    stack1: list
+    stack2: list
+    '''
+    #code here
+    if stack1:
+        stack2.append(stack1[0])
+        # print(stack1[0])
+        del stack1[0]
+    else:
+        stack2.append(-1)
+        # print(-1)
+    return stack2
