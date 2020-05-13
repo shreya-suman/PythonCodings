@@ -1,31 +1,20 @@
 Link : https://practice.geeksforgeeks.org/problems/get-min-at-pop/1
 
 def _push(a,n):
-    '''
-    :param a: given array
-    :param n: given size of array
-    :return: stack
-    '''
-    # code here
+    # creating the stack of min numbers where top represents the min inside the stack
     stack = []
-    for i in range(n-1, -1, -1):
-        stack.append(a[i])
-    # print(stack)
+    for i in a:
+        if not stack:
+            stack.append(i)
+        else:
+            stack.append(min(i, stack[-1]))
     return stack
     
-    
 def _getMinAtPop(stack):
-    '''
-    :param stack: our stack
-    :return: none, print the elements in order of pop one by one, new line is not required
-    '''
-    # code here
-    min_elem = stack[-1]
+    # printing the minimum number present in stack
     while stack:
-        if stack[-1] < min_elem:
-            # print(stack, min_elem)
-            min_elem = stack[-1]
-        stack.pop()
-        print(min_elem)
-    return None
+        print(stack[-1], end = ' ')
+        del stack[-1]
+    
+
 
