@@ -1,0 +1,31 @@
+#https://practice.geeksforgeeks.org/problems/special-stack/1
+
+def push(arr, ele):
+    # Code here
+    arr.append(ele)
+# Function should pop an element from stack
+def pop(arr):
+    # Code here
+    arr.pop()
+# function should return 1/0 or True/False
+def isFull(n, arr):
+    # Code here
+    if len(arr) == n:
+        return True
+    return False
+# function should return 1/0 or True/False
+def isEmpty(arr):
+    #Code here
+    if len(arr) == 0:
+        return True
+    return False
+# function should return minimum element from the stack
+def getMin(n, arr):
+    # Code here
+    min_elem = 10**10
+    for i in range(n):
+        if arr[i] < min_elem:
+            min_elem = arr[i]
+            
+    return min_elem
+        
