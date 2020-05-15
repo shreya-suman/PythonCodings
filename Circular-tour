@@ -1,0 +1,19 @@
+#Link : https://practice.geeksforgeeks.org/problems/circular-tour-1587115620/1/
+
+def tour(lis, n):
+    #Code here
+    storedPetrol = 0
+    startCity = -1
+    if sum([lis[i][0] for i in range(n)]) < sum([lis[i][1] for i in range(n)]):
+        return -1
+    for i in range(n):
+        storedPetrol += lis[i][0]
+        if startCity != -1 and storedPetrol - lis[i][1] < 0:
+            startCity = -1
+        elif startCity == -1 and storedPetrol - lis[i][1] >= 0:
+            startCity = i
+            
+        # travel to next thus reducing pretrol by the amount of dist
+        storedPetrol = max(storedPetrol - lis[i][1], 0)
+    
+    return startCity
