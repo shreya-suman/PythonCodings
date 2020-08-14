@@ -1,0 +1,19 @@
+def check_color_smurfs(smurf_list, n):
+    for i in range(n-2):
+        if n == 2 and len(list(set(smurf_list))) == 2:
+            return list(set(['R','G','B']) - set([smurf_list[i], smurf_list[i+1]]))
+        if smurf_list[i] == smurf_list[i+1]:
+            i += 1
+        else:
+            smurf_list[i] = list(set(['R','G','B']) - set([smurf_list[i], smurf_list[i+1]]))[0]
+            del smurf_list[i+1]
+    return smurf_list
+
+t = int(input())
+while t:
+    t-= 1
+    n = int(input())
+    smurf_list = list(map(str, input().split()))
+    while len(list(set(smurf_list))) != 1:
+        smurf_list = check_color_smurfs(smurf_list, len(smurf_list))     
+    print(len(smurf_list))
