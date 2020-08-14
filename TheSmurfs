@@ -1,3 +1,4 @@
+#link = https://practice.geeksforgeeks.org/problems/the-smurfs/0
 def check_color_smurfs(smurf_list, n):
     for i in range(n-2):
         if n == 2 and len(list(set(smurf_list))) == 2:
